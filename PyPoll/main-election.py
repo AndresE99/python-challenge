@@ -54,8 +54,11 @@ Election_Results = (
     f"\n\nElection Results\n"
     f"-------------------------\n"
     f"Total Votes: {VotesTotal}\n"
-    f"-------------------------\n")
+    f"-------------------------\n"
+    
+    f"{candidate}: {vote_percentage:.3f}% ({Votes})\n")
 print(Election_Results)
+
 # Print summary of election winner to Terminal
 Election_Results_Summary = (
     f"-------------------------\n"
@@ -63,6 +66,15 @@ Election_Results_Summary = (
     f"-------------------------\n")
 
 print(Election_Results_Summary)
+
+#  Election Candidates from terminal to txt file 
+output_file = os.path.join("Analysis", "election_candidates.txt")
+
+# Print results and export data to .txt file
+with open(output_file, "w") as txt_file:
+
+    # Save the final vote count 
+    txt_file.write(results_output)
 
 #  Election_Results from terminal to txt file 
 output_file = os.path.join("Analysis", "election_results.txt")
